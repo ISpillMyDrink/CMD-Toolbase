@@ -23,7 +23,7 @@ title %windowTitle%
 net file 1>nul 2>nul
 if %errorlevel% NEQ 0 (
     if %requireAdmin% EQU 1 (
-        echo Das Programm muss als Administrator gestartet werden.
+        echo The program has to be run as administrator.
         echo:
         pause
         exit /b
@@ -35,10 +35,10 @@ for %%s in (%startSelection%) do set selected[%%s]=1
 :menu
 cls
 call :displayModules
-echo. X Beenden      R Neustarten      G Starten      +/- Alle/Keine
+echo. X Quit      R Reboot      G Go      +/- None/All
 echo:
 set instructions=
-set /p instructions=Bitte Module/Befehl auswaehlen: 
+set /p instructions=Please select modules to run: 
 if /i "%instructions%" EQU "G" (
     call :executeModules
     pause
@@ -110,9 +110,9 @@ for /R "%modules%" %%a in (*.cmd) do (
     set /a numMod=!numMod!+1
     for /l %%i in (!numMod!,1,!numMod!) do set isSelected=!selected[%%i]!
     if !isSelected! EQU 1 (
-        echo %%~na startet...
+        echo %%~na running...
         call "%%a" "%config%" "%tools%" "%params%"
-        echo %%~na fertig.
+        echo %%~na done.
     )
 )
 exit /b
