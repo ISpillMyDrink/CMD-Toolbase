@@ -12,3 +12,6 @@ and set the (hopefully self-explanatory) options in the configuration file.
 "###" is a 3-digit number used for sorting.
 3. Place batch scripts in the category folders, again using the naming convention "###_Module_Name.cmd".
 4. Profit.
+
+![Capture1](https://user-images.githubusercontent.com/69786817/115140799-6dc2e000-a039-11eb-885d-79578d1fee4d.PNG)
+![Capture2](https://user-images.githubusercontent.com/69786817/115140806-79aea200-a039-11eb-8374-055ca52765e5.PNG)
